@@ -251,9 +251,9 @@ async function runLiveProductionTests() {
   // Update status on first record
   const statusSelect = page.locator('tbody tr select').first();
   if (await statusSelect.isVisible()) {
-    await statusSelect.selectOption({ label: 'Enrolled' });
+    await statusSelect.selectOption({ label: 'Completed' });
     await page.waitForTimeout(400);
-    record('AdminCRM', 'Status updated to Enrolled', true, 'Dropdown selection processed');
+    record('AdminCRM', 'Status updated to Completed', true, 'Dropdown selection processed');
   }
 
   // Hard reload page and check persistence
@@ -265,9 +265,8 @@ async function runLiveProductionTests() {
   record('AdminCRM', 'Records persist after hard refresh', reloadedRowCount >= initialRowCount, `${reloadedRowCount} records retained`);
 
   // Test reset demonstration data
-  const resetBtn = page.locator('button:has-text("Reset All Demo Data"), button:has-text("Reset Demo Data")').first();
+  const resetBtn = page.locator('button:has-text("Reset Demo Data")').first();
   if (await resetBtn.isVisible()) {
-    page.on('dialog', async dialog => await dialog.accept());
     await resetBtn.click();
     await page.waitForTimeout(500);
     const resetCount = await page.locator('tbody tr').count();
@@ -292,9 +291,24 @@ async function runLiveProductionTests() {
   await mobilePage.waitForTimeout(400);
 
   // Check mobile hamburger button
-  const mobileMenuBtn = mobilePage.locator('button[aria-label*="menu" i], button:has-text("☰"), button:has-text("Menu"), nav button').first();
+  const mobileMenuBtn = mobilePage.locator('#mobile-menu-btn');
   const menuVisible = await mobileMenuBtn.isVisible();
   record('Mobile', 'Mobile navigation toggle visible', menuVisible, 'Responsive header functioning');
+
+  // Click to open mobile menu
+  if (menuVisible) {
+    await mobileMenuBtn.click();
+    await mobilePage.waitForTimeout(300);
+    const drawerOpen = await mobilePage.evaluate(() => {
+      const el = document.getElementById('mobile-menu-drawer');
+      return el && !el.classList.contains('hidden');
+    });
+    record('Mobile', 'Mobile menu drawer opened', drawerOpen, 'Slide-down mobile navigation active');
+    
+    // Close drawer
+    await mobileMenuBtn.click();
+    await mobilePage.waitForTimeout(200);
+  }
 
   // Verify headline does not horizontally scroll
   const scrollWidth = await mobilePage.evaluate(() => document.documentElement.scrollWidth);
