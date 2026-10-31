@@ -1,0 +1,6 @@
+# Little Roots Kindergarten — Fictional Portfolio Concept by Invenio
+# Disallow search engine indexing of internal simulated admissions demo dashboard
+User-agent: *
+Disallow: /admin
+Allow: /
+Sitemap: https://little-roots-kindergarten.pages.dev/sitemap.xml

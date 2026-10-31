@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Little Roots Kindergarten | A Place to Bloom with Wonder — Invenio Concept</title>
+  <meta name="description" content="Explore Little Roots, a premium fictional kindergarten website concept by Invenio featuring interactive learning programs, a campus explorer and demonstration admissions experiences." />
+  
+  <!-- Canonical & Indexing -->
+  <link rel="canonical" href="https://little-roots-kindergarten.pages.dev/" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://little-roots-kindergarten.pages.dev/" />
+  <meta property="og:title" content="Little Roots Kindergarten | A Place to Bloom with Wonder" />
+  <meta property="og:description" content="Where little beginnings grow big. An interactive multi-page kindergarten website and admissions demonstration concept by Invenio." />
+  <meta property="og:image" content="https://little-roots-kindergarten.pages.dev/assets/little_roots_kindergarten_brand_identity.png" />
+  <meta property="og:site_name" content="Little Roots Kindergarten" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Little Roots Kindergarten | A Place to Bloom with Wonder" />
+  <meta name="twitter:description" content="Where little beginnings grow big. An interactive kindergarten website and admissions demonstration concept by Invenio." />
+  <meta name="twitter:image" content="https://little-roots-kindergarten.pages.dev/assets/little_roots_kindergarten_brand_identity.png" />
+
+  <!-- Favicon & Brand Theme -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="theme-color" content="#39263E" />
+
+  <!-- Google Fonts: Fraunces, Manrope, Caveat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Compiled Production Stylesheet (Replaces Runtime Tailwind CDN) -->
+  <link rel="stylesheet" href="/src/styles/main.css" />
+</head>
+<body class="min-h-screen flex flex-col bg-[#FAFAF7] text-[#2A202D] selection:bg-[#D9EDB5] selection:text-[#174F43]">
+
+  <a href="#main-content" onclick="window.app.focusMain(event)" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-[#174F43] focus:text-white focus:px-4 focus:py-2 focus:rounded-full focus:font-semibold">
+    Skip to main content
+  </a>
+
+  <!-- Top Announcement / Concept Utility Bar -->
+  <div class="bg-[#39263E] text-[#FAFAF7] text-xs border-b border-white/10 relative z-40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-2">
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-[#D9EDB5] text-[#174F43]">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#174F43]"></span>
+          Invenio Portfolio Concept
+        </span>
+        <span class="text-white/85 hidden sm:inline">
+          Fictional kindergarten experience for Dhaka, Bangladesh — Demonstration admissions &amp; tours only.
+        </span>
+      </div>
+      <div class="flex items-center gap-2.5 ml-auto">
+        <!-- Discreet Explore Demo (18 Routes) Trigger -->
+        <button type="button" onclick="window.app.toggleDemoDrawer()" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 hover:bg-white/20 text-[#FAFAF7] text-xs font-semibold border border-white/15 transition-colors">
+          <svg class="w-3.5 h-3.5 text-[#F6C866]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
+          </svg>
+          <span>Explore Demo (18 Routes)</span>
+        </button>
+
+        <!-- Admin Demo Shortcut -->
+        <button type="button" onclick="window.app.navigate('/admin')" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#4E3555] hover:bg-[#F6C866] hover:text-[#39263E] text-[#F6C866] text-xs font-semibold border border-[#F6C866]/30 transition-colors">
+          <span>Admin Demo</span>
+          <span id="header-admin-badge" class="px-1.5 py-0.2 bg-white/20 rounded-full text-[10px]">8</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Website Header & Navigation -->
+  <header class="sticky top-0 z-30 bg-[#FAFAF7]/95 backdrop-blur-md border-b border-[#39263E]/8 transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+      <button type="button" onclick="window.app.navigate('/')" class="flex items-center gap-3 text-left group focus:outline-none" aria-label="Little Roots Kindergarten Home">
+        <div id="header-logo-slot" class="flex-shrink-0"></div>
+      </button>
+
+      <nav aria-label="Main Navigation" class="hidden lg:flex items-center gap-1 xl:gap-2">
+        <div class="relative group">
+          <button type="button" onclick="window.app.navigate('/our-story')" data-nav="/our-story" class="nav-link px-3 py-2 rounded-full text-sm font-semibold text-[#39263E] hover:bg-[#F4F0E9] transition-colors inline-flex items-center gap-1">
+            <span>About</span>
+            <svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="invisible opacity-0 group-hover:visible group-hover:opacity-100 focus-within:visible focus-within:opacity-100 transition-all duration-200 absolute left-0 mt-1 w-56 bg-white rounded-2xl shadow-editorial border border-[#39263E]/10 p-2 z-50">
+            <button type="button" onclick="window.app.navigate('/our-story')" class="w-full text-left px-3.5 py-2.5 rounded-xl text-sm font-medium text-[#39263E] hover:bg-[#ECF6D8] hover:text-[#174F43] flex items-center justify-between">
+              <span>Our Story &amp; Philosophy</span>
+              <span class="text-xs opacity-60">→</span>
+            </button>
+            <button type="button" onclick="window.app.navigate('/our-educators')" class="w-full text-left px-3.5 py-2.5 rounded-xl text-sm font-medium text-[#39263E] hover:bg-[#ECF6D8] hover:text-[#174F43] flex items-center justify-between">
+              <span>Our Educators</span>
+              <span class="text-xs opacity-60">→</span>
+            </button>
+            <button type="button" onclick="window.app.navigate('/privacy')" class="w-full text-left px-3.5 py-2.5 rounded-xl text-sm font-medium text-[#39263E] hover:bg-[#ECF6D8] hover:text-[#174F43] flex items-center justify-between">
+              <span>Brand &amp; Concept Disclosure</span>
+              <span class="text-xs opacity-60">→</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="relative group">
+          <button type="button" onclick="window.app.navigate('/programs')" data-nav="/programs" class="nav-link px-3 py-2 rounded-full text-sm font-semibold text-[#39263E] hover:bg-[#F4F0E9] transition-colors inline-flex items-center gap-1">
+            <span>Programs</span>
+            <svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="invisible opacity-0 group-hover:visible group-hover:opacity-100 focus-within:visible focus-within:opacity-100 transition-all duration-200 absolute left-0 mt-1 w-64 bg-white rounded-2xl shadow-editorial border border-[#39263E]/10 p-2 z-50">
+            <button type="button" onclick="window.app.navigate('/programs')" class="w-full text-left px-3.5 py-2 rounded-xl text-sm font-bold text-[#174F43] hover:bg-[#ECF6D8] flex items-center justify-between">
+              <span>All Programs &amp; Age Finder</span>
+              <span>→</span>
+            </button>
+            <div class="my-1 border-t border-gray-100"></div>
+            <button type="button" onclick="window.app.navigate('/programs/playgroup')" class="w-full text-left px-3.5 py-2 rounded-xl text-sm text-[#39263E] hover:bg-[#ECF6D8] flex items-center justify-between">
+              <span>Playgroup</span>
+              <span class="text-xs px-2 py-0.5 rounded-full bg-[#D9EDB5] text-[#174F43] font-semibold">2–3 yrs</span>
+            </button>
+            <button type="button" onclick="window.app.navigate('/programs/nursery')" class="w-full text-left px-3.5 py-2 rounded-xl text-sm text-[#39263E] hover:bg-[#FDE8D8] flex items-center justify-between">
+              <span>Nursery</span>
+              <span class="text-xs px-2 py-0.5 rounded-full bg-[#F8BD96]/60 text-[#39263E] font-semibold">3–4 yrs</span>
+            </button>
+            <button type="button" onclick="window.app.navigate('/programs/kindergarten')" class="w-full text-left px-3.5 py-2 rounded-xl text-sm text-[#39263E] hover:bg-[#EAEBFF] flex items-center justify-between">
+              <span>Kindergarten</span>
+              <span class="text-xs px-2 py-0.5 rounded-full bg-[#C6C9FF]/60 text-[#39263E] font-semibold">4–6 yrs</span>
+            </button>
+            <button type="button" onclick="window.app.navigate('/programs/enrichment')" class="w-full text-left px-3.5 py-2 rounded-xl text-sm text-[#39263E] hover:bg-[#ECF6D8] flex items-center justify-between">
+              <span>Nature &amp; Creative Enrichment</span>
+              <span class="text-xs px-2 py-0.5 rounded-full bg-[#F4F0E9] text-[#39263E] font-semibold">All Ages</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="relative group">
+          <button type="button" onclick="window.app.navigate('/our-campus')" data-nav="/our-campus" class="nav-link px-3 py-2 rounded-full text-sm font-semibold text-[#39263E] hover:bg-[#F4F0E9] transition-colors inline-flex items-center gap-1">
+            <span>Campus Life</span>
+            <svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="invisible opacity-0 group-hover:visible group-hover:opacity-100 focus-within:visible focus-within:opacity-100 transition-all duration-200 absolute left-0 mt-1 w-60 bg-white rounded-2xl shadow-editorial border border-[#39263E]/10 p-2 z-50">
+            <button type="button" onclick="window.app.navigate('/our-campus')" class="w-full text-left px-3.5 py-2.5 rounded-xl text-sm font-medium text-[#39263E] hover:bg-[#ECF6D8] hover:text-[#174F43] flex items-center justify-between">
+              <span>Interactive Campus Explorer</span>
+              <span class="text-xs opacity-60">→</span>
+            </button>
+            <button type="button" onclick="window.app.navigate('/a-day-at-little-roots')" class="w-full text-left px-3.5 py-2.5 rounded-xl text-sm font-medium text-[#39263E] hover:bg-[#ECF6D8] hover:text-[#174F43] flex items-center justify-between">
+              <span>A Day at Little Roots</span>
+              <span class="text-xs opacity-60">→</span>
+            </button>
+            <button type="button" onclick="window.app.navigate('/gallery')" class="w-full text-left px-3.5 py-2.5 rounded-xl text-sm font-medium text-[#39263E] hover:bg-[#ECF6D8] hover:text-[#174F43] flex items-center justify-between">
+              <span>School Life Gallery</span>
+              <span class="text-xs opacity-60">→</span>
+            </button>
+            <button type="button" onclick="window.app.navigate('/parent-corner')" class="w-full text-left px-3.5 py-2.5 rounded-xl text-sm font-medium text-[#39263E] hover:bg-[#ECF6D8] hover:text-[#174F43] flex items-center justify-between">
+              <span>Parent Corner &amp; Resources</span>
+              <span class="text-xs opacity-60">→</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="relative group">
+          <button type="button" onclick="window.app.navigate('/admissions')" data-nav="/admissions" class="nav-link px-3 py-2 rounded-full text-sm font-semibold text-[#39263E] hover:bg-[#F4F0E9] transition-colors inline-flex items-center gap-1">
+            <span>Admissions</span>
+            <svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="invisible opacity-0 group-hover:visible group-hover:opacity-100 focus-within:visible focus-within:opacity-100 transition-all duration-200 absolute left-0 mt-1 w-60 bg-white rounded-2xl shadow-editorial border border-[#39263E]/10 p-2 z-50">
+            <button type="button" onclick="window.app.navigate('/admissions')" class="w-full text-left px-3.5 py-2.5 rounded-xl text-sm font-medium text-[#39263E] hover:bg-[#ECF6D8] hover:text-[#174F43] flex items-center justify-between">
+              <span>Admissions Overview</span>
+              <span class="text-xs opacity-60">→</span>
+            </button>
+            <button type="button" onclick="window.app.navigate('/book-a-tour')" class="w-full text-left px-3.5 py-2.5 rounded-xl text-sm font-medium text-[#39263E] hover:bg-[#FDE8D8] flex items-center justify-between">
+              <span>Book a School Tour</span>
+              <span class="text-xs opacity-60">→</span>
+            </button>
+            <button type="button" onclick="window.app.navigate('/apply')" class="w-full text-left px-3.5 py-2.5 rounded-xl text-sm font-medium text-[#39263E] hover:bg-[#EAEBFF] flex items-center justify-between">
+              <span>Admission Inquiry Wizard</span>
+              <span class="text-xs opacity-60">→</span>
+            </button>
+            <button type="button" onclick="window.app.navigate('/admin')" class="w-full text-left px-3.5 py-2.5 rounded-xl text-sm font-semibold text-[#174F43] bg-[#ECF6D8]/60 hover:bg-[#ECF6D8] flex items-center justify-between mt-1">
+              <span>Demo Admin Dashboard</span>
+              <span class="text-xs">★</span>
+            </button>
+          </div>
+        </div>
+
+        <button type="button" onclick="window.app.navigate('/contact')" data-nav="/contact" class="nav-link px-3 py-2 rounded-full text-sm font-semibold text-[#39263E] hover:bg-[#F4F0E9] transition-colors">
+          Contact
+        </button>
+      </nav>
+
+      <div class="hidden lg:flex items-center gap-2.5">
+        <button type="button" onclick="window.app.navigate('/apply')" class="px-4 py-2.5 rounded-full text-sm font-semibold text-[#39263E] border border-[#39263E]/25 hover:border-[#39263E] hover:bg-[#F4F0E9] transition-all">
+          Begin Inquiry
+        </button>
+        <button type="button" onclick="window.app.navigate('/book-a-tour')" class="px-5 py-2.5 rounded-full text-sm font-bold bg-[#F6C866] hover:bg-[#F8BD96] text-[#39263E] shadow-sm hover:shadow transition-all inline-flex items-center gap-2">
+          <span>Book a School Tour</span>
+          <span aria-hidden="true">→</span>
+        </button>
+      </div>
+
+      <div class="flex items-center gap-2 lg:hidden">
+        <button type="button" onclick="window.app.navigate('/book-a-tour')" class="px-3.5 py-2 rounded-full text-xs font-bold bg-[#F6C866] text-[#39263E]">
+          Book a Tour
+        </button>
+        <button type="button" id="mobile-menu-btn" onclick="window.app.toggleMobileMenu()" aria-label="Toggle Navigation Menu" aria-expanded="false" class="p-2.5 rounded-full bg-[#F4F0E9] text-[#39263E] hover:bg-[#D9EDB5] transition-colors">
+          <svg id="mobile-menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg id="mobile-menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu-drawer" class="hidden lg:hidden bg-[#FAFAF7] border-b border-[#39263E]/15 shadow-editorial max-h-[82vh] overflow-y-auto">
+      <div class="px-4 pt-3 pb-6 space-y-4">
+        <div class="grid grid-cols-2 gap-2">
+          <button type="button" onclick="window.app.navigate('/book-a-tour')" class="w-full py-3 px-4 rounded-2xl bg-[#F6C866] text-[#39263E] font-bold text-sm text-center shadow-sm">
+            Book a School Tour →
+          </button>
+          <button type="button" onclick="window.app.navigate('/apply')" class="w-full py-3 px-4 rounded-2xl bg-[#174F43] text-white font-bold text-sm text-center shadow-sm">
+            Admission Inquiry →
+          </button>
+        </div>
+
+        <div class="space-y-1">
+          <p class="px-3 text-[11px] font-bold uppercase tracking-wider text-[#174F43]">Explore Little Roots</p>
+          <button type="button" onclick="window.app.navigate('/')" class="w-full text-left px-3 py-2.5 rounded-xl text-sm font-semibold text-[#39263E] hover:bg-[#F4F0E9]">Home</button>
+          <button type="button" onclick="window.app.navigate('/our-story')" class="w-full text-left px-3 py-2.5 rounded-xl text-sm font-semibold text-[#39263E] hover:bg-[#F4F0E9]">Our Story &amp; Philosophy</button>
+          <button type="button" onclick="window.app.navigate('/our-educators')" class="w-full text-left px-3 py-2.5 rounded-xl text-sm font-semibold text-[#39263E] hover:bg-[#F4F0E9]">Our Educators</button>
+          <button type="button" onclick="window.app.navigate('/a-day-at-little-roots')" class="w-full text-left px-3 py-2.5 rounded-xl text-sm font-semibold text-[#39263E] hover:bg-[#F4F0E9]">A Day at Little Roots (Interactive Timeline)</button>
+          <button type="button" onclick="window.app.navigate('/our-campus')" class="w-full text-left px-3 py-2.5 rounded-xl text-sm font-semibold text-[#39263E] hover:bg-[#F4F0E9]">Campus Explorer</button>
+          <button type="button" onclick="window.app.navigate('/gallery')" class="w-full text-left px-3 py-2.5 rounded-xl text-sm font-semibold text-[#39263E] hover:bg-[#F4F0E9]">School Life Gallery</button>
+          <button type="button" onclick="window.app.navigate('/parent-corner')" class="w-full text-left px-3 py-2.5 rounded-xl text-sm font-semibold text-[#39263E] hover:bg-[#F4F0E9]">Parent Corner</button>
+        </div>
+
+        <div class="space-y-1 pt-2 border-t border-[#39263E]/10">
+          <p class="px-3 text-[11px] font-bold uppercase tracking-wider text-[#174F43]">Learning Programs</p>
+          <button type="button" onclick="window.app.navigate('/programs')" class="w-full text-left px-3 py-2 rounded-xl text-sm font-bold text-[#174F43] hover:bg-[#ECF6D8]">All Programs &amp; Age Selector</button>
+          <button type="button" onclick="window.app.navigate('/programs/playgroup')" class="w-full text-left px-3 py-2 rounded-xl text-sm text-[#39263E] hover:bg-[#F4F0E9]">Playgroup (Ages 2–3)</button>
+          <button type="button" onclick="window.app.navigate('/programs/nursery')" class="w-full text-left px-3 py-2 rounded-xl text-sm text-[#39263E] hover:bg-[#F4F0E9]">Nursery (Ages 3–4)</button>
+          <button type="button" onclick="window.app.navigate('/programs/kindergarten')" class="w-full text-left px-3 py-2 rounded-xl text-sm text-[#39263E] hover:bg-[#F4F0E9]">Kindergarten (Ages 4–6)</button>
+          <button type="button" onclick="window.app.navigate('/programs/enrichment')" class="w-full text-left px-3 py-2 rounded-xl text-sm text-[#39263E] hover:bg-[#F4F0E9]">Enrichment — Nature &amp; Atelier</button>
+        </div>
+
+        <div class="space-y-1 pt-2 border-t border-[#39263E]/10">
+          <p class="px-3 text-[11px] font-bold uppercase tracking-wider text-[#174F43]">Admissions &amp; Operations Demo</p>
+          <button type="button" onclick="window.app.navigate('/admissions')" class="w-full text-left px-3 py-2 rounded-xl text-sm font-semibold text-[#39263E] hover:bg-[#F4F0E9]">Admissions Overview</button>
+          <button type="button" onclick="window.app.navigate('/contact')" class="w-full text-left px-3 py-2 rounded-xl text-sm font-semibold text-[#39263E] hover:bg-[#F4F0E9]">Contact &amp; Inquiries</button>
+          <button type="button" onclick="window.app.navigate('/privacy')" class="w-full text-left px-3 py-2 rounded-xl text-sm font-semibold text-[#39263E] hover:bg-[#F4F0E9]">Privacy &amp; Concept Disclosure</button>
+          <button type="button" onclick="window.app.navigate('/admin')" class="w-full text-left px-3 py-2.5 rounded-xl text-sm font-bold bg-[#ECF6D8] text-[#174F43]">★ Demonstration Admissions Dashboard</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 18-Route Portfolio Showcase Slide-Over Drawer -->
+  <div id="demo-routes-drawer" role="dialog" aria-modal="true" aria-labelledby="demo-drawer-title" class="fixed inset-0 z-50 hidden bg-[#39263E]/75 backdrop-blur-sm flex justify-end" onclick="window.app.closeDemoDrawer()">
+    <div class="bg-[#FAFAF7] w-full max-w-xl h-full shadow-2xl p-6 sm:p-8 overflow-y-auto flex flex-col justify-between" onclick="event.stopPropagation()">
+      <div class="space-y-6">
+        <div class="flex items-center justify-between border-b border-[#39263E]/10 pb-4">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-[#D9EDB5] text-[#174F43]">Portfolio Showcase</span>
+            <h2 id="demo-drawer-title" class="font-serif text-2xl font-bold text-[#39263E] mt-1">All 18 Concept Routes</h2>
+          </div>
+          <button type="button" onclick="window.app.closeDemoDrawer()" aria-label="Close Drawer" class="p-2 rounded-full bg-[#F4F0E9] hover:bg-[#F8BD96] text-[#39263E] transition-colors">✕</button>
+        </div>
+
+        <p class="text-xs text-[#45534C] leading-relaxed">
+          Quickly inspect any route of the Little Roots Kindergarten experience. Every route is fully responsive with direct URL deep-linking support:
+        </p>
+
+        <!-- Route Groups -->
+        <div class="space-y-4 text-xs">
+          <div>
+            <h3 class="font-bold text-[#174F43] uppercase tracking-wider mb-2">Core Brand &amp; Philosophy</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              <button type="button" onclick="window.app.navigate('/')" class="p-3 text-left rounded-xl bg-white border border-[#39263E]/10 hover:border-[#174F43] hover:bg-[#ECF6D8] transition-all">
+                <strong class="block text-[#39263E]">1. /</strong>
+                <span class="text-[#45534C]">Homepage &amp; Hero</span>
+              </button>
+              <button type="button" onclick="window.app.navigate('/our-story')" class="p-3 text-left rounded-xl bg-white border border-[#39263E]/10 hover:border-[#174F43] hover:bg-[#ECF6D8] transition-all">
+                <strong class="block text-[#39263E]">2. /our-story</strong>
+                <span class="text-[#45534C]">Our Story &amp; Philosophy</span>
+              </button>
+              <button type="button" onclick="window.app.navigate('/our-educators')" class="p-3 text-left rounded-xl bg-white border border-[#39263E]/10 hover:border-[#174F43] hover:bg-[#ECF6D8] transition-all">
+                <strong class="block text-[#39263E]">10. /our-educators</strong>
+                <span class="text-[#45534C]">Our Teaching Guides</span>
+              </button>
+              <button type="button" onclick="window.app.navigate('/privacy')" class="p-3 text-left rounded-xl bg-white border border-[#39263E]/10 hover:border-[#174F43] hover:bg-[#ECF6D8] transition-all">
+                <strong class="block text-[#39263E]">17. /privacy</strong>
+                <span class="text-[#45534C]">Concept Disclosure &amp; Colors</span>
+              </button>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="font-bold text-[#174F43] uppercase tracking-wider mb-2">Learning Programs</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              <button type="button" onclick="window.app.navigate('/programs')" class="p-3 text-left rounded-xl bg-white border border-[#39263E]/10 hover:border-[#174F43] hover:bg-[#ECF6D8] transition-all">
+                <strong class="block text-[#39263E]">3. /programs</strong>
+                <span class="text-[#45534C]">Programs &amp; Age Finder</span>
+              </button>
+              <button type="button" onclick="window.app.navigate('/programs/playgroup')" class="p-3 text-left rounded-xl bg-white border border-[#39263E]/10 hover:border-[#174F43] hover:bg-[#ECF6D8] transition-all">
+                <strong class="block text-[#39263E]">4. /programs/playgroup</strong>
+                <span class="text-[#45534C]">Playgroup (2–3 Years)</span>
+              </button>
+              <button type="button" onclick="window.app.navigate('/programs/nursery')" class="p-3 text-left rounded-xl bg-white border border-[#39263E]/10 hover:border-[#174F43] hover:bg-[#ECF6D8] transition-all">
+                <strong class="block text-[#39263E]">5. /programs/nursery</strong>
+                <span class="text-[#45534C]">Nursery (3–4 Years)</span>
+              </button>
+              <button type="button" onclick="window.app.navigate('/programs/kindergarten')" class="p-3 text-left rounded-xl bg-white border border-[#39263E]/10 hover:border-[#174F43] hover:bg-[#ECF6D8] transition-all">
+                <strong class="block text-[#39263E]">6. /programs/kindergarten</strong>
+                <span class="text-[#45534C]">Kindergarten (4–6 Years)</span>
+              </button>
+              <button type="button" onclick="window.app.navigate('/programs/enrichment')" class="p-3 text-left rounded-xl bg-white border border-[#39263E]/10 hover:border-[#174F43] hover:bg-[#ECF6D8] transition-all sm:col-span-2">
+                <strong class="block text-[#39263E]">7. /programs/enrichment</strong>
+                <span class="text-[#45534C]">Nature &amp; Creative Enrichment Studio</span>
+              </button>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="font-bold text-[#174F43] uppercase tracking-wider mb-2">Campus &amp; Life</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              <button type="button" onclick="window.app.navigate('/our-campus')" class="p-3 text-left rounded-xl bg-white border border-[#39263E]/10 hover:border-[#174F43] hover:bg-[#ECF6D8] transition-all">
+                <strong class="block text-[#39263E]">9. /our-campus</strong>
+                <span class="text-[#45534C]">Interactive Campus Explorer</span>
+              </button>
+              <button type="button" onclick="window.app.navigate('/a-day-at-little-roots')" class="p-3 text-left rounded-xl bg-white border border-[#39263E]/10 hover:border-[#174F43] hover:bg-[#ECF6D8] transition-all">
+                <strong class="block text-[#39263E]">8. /a-day-at-little-roots</strong>
+                <span class="text-[#45534C]">Daily Routine Timeline</span>
+              </button>
+              <button type="button" onclick="window.app.navigate('/gallery')" class="p-3 text-left rounded-xl bg-white border border-[#39263E]/10 hover:border-[#174F43] hover:bg-[#ECF6D8] transition-all">
+                <strong class="block text-[#39263E]">15. /gallery</strong>
+                <span class="text-[#45534C]">Gallery &amp; Lightbox</span>
+              </button>
+              <button type="button" onclick="window.app.navigate('/parent-corner')" class="p-3 text-left rounded-xl bg-white border border-[#39263E]/10 hover:border-[#174F43] hover:bg-[#ECF6D8] transition-all">
+                <strong class="block text-[#39263E]">14. /parent-corner</strong>
+                <span class="text-[#45534C]">Parent Corner &amp; Calendar</span>
+              </button>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="font-bold text-[#174F43] uppercase tracking-wider mb-2">Admissions &amp; Administrative Demo</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              <button type="button" onclick="window.app.navigate('/admissions')" class="p-3 text-left rounded-xl bg-white border border-[#39263E]/10 hover:border-[#174F43] hover:bg-[#ECF6D8] transition-all">
+                <strong class="block text-[#39263E]">11. /admissions</strong>
+                <span class="text-[#45534C]">Admissions Info &amp; Checklist</span>
+              </button>
+              <button type="button" onclick="window.app.navigate('/book-a-tour')" class="p-3 text-left rounded-xl bg-[#F6C866]/20 border border-[#F6C866]/50 hover:bg-[#F6C866]/40 transition-all">
+                <strong class="block text-[#39263E]">12. /book-a-tour</strong>
+                <span class="text-[#45534C]">School Tour Request Wizard</span>
+              </button>
+              <button type="button" onclick="window.app.navigate('/apply')" class="p-3 text-left rounded-xl bg-[#ECF6D8]/60 border border-[#174F43]/30 hover:bg-[#ECF6D8] transition-all">
+                <strong class="block text-[#39263E]">13. /apply</strong>
+                <span class="text-[#45534C]">Admission Inquiry Wizard</span>
+              </button>
+              <button type="button" onclick="window.app.navigate('/contact')" class="p-3 text-left rounded-xl bg-white border border-[#39263E]/10 hover:border-[#174F43] hover:bg-[#ECF6D8] transition-all">
+                <strong class="block text-[#39263E]">16. /contact</strong>
+                <span class="text-[#45534C]">Contact &amp; Dhaka Setting</span>
+              </button>
+              <button type="button" onclick="window.app.navigate('/admin')" class="p-3.5 text-left rounded-xl bg-[#39263E] text-white hover:bg-[#174F43] transition-all sm:col-span-2">
+                <div class="flex items-center justify-between">
+                  <strong class="text-[#F6C866]">★ 18. /admin — Demonstration Admissions Dashboard</strong>
+                  <span class="text-xs bg-white/20 px-2 py-0.5 rounded-full">Interactive</span>
+                </div>
+                <span class="text-white/80 block mt-0.5">Filter inquiries, cycle tour statuses, inspect records, add synthetic tests &amp; reset demo database.</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-6 border-t border-[#39263E]/10 flex justify-between items-center text-xs text-[#45534C]">
+        <span>Little Roots Kindergarten · Invenio Concept</span>
+        <button type="button" onclick="window.app.closeDemoDrawer()" class="px-4 py-2 rounded-full bg-[#174F43] text-white font-bold">Close Drawer</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content Container for Dynamic Page Rendering -->
+  <main id="main-content" tabindex="-1" class="flex-grow focus:outline-none"></main>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox-modal" role="dialog" aria-modal="true" aria-labelledby="lightbox-title" class="fixed inset-0 z-50 hidden bg-[#39263E]/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-6" onclick="window.app.closeLightboxOnBackdrop(event)">
+    <div class="relative w-full max-w-4xl bg-[#FAFAF7] rounded-3xl overflow-hidden shadow-2xl border border-white/20" onclick="event.stopPropagation()">
+      <div class="flex items-center justify-between px-6 py-4 bg-white border-b border-[#39263E]/10">
+        <div>
+          <span id="lightbox-cat" class="text-xs font-bold uppercase tracking-wider text-[#174F43] bg-[#D9EDB5] px-2.5 py-0.5 rounded-full">Category</span>
+          <h3 id="lightbox-title" class="text-lg font-serif font-bold text-[#39263E] mt-1">Image Title</h3>
+        </div>
+        <button type="button" onclick="window.app.closeLightbox()" aria-label="Close Lightbox" class="p-2 rounded-full bg-[#F4F0E9] text-[#39263E] hover:bg-[#F8BD96] transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="relative bg-[#281A2C] flex items-center justify-center min-h-[280px] sm:min-h-[420px] max-h-[68vh] overflow-hidden">
+        <img id="lightbox-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Gallery preview" class="max-w-full max-h-[68vh] object-contain editorial-photo" />
+        <button type="button" onclick="window.app.stepLightbox(-1)" aria-label="Previous Image" class="absolute left-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/90 hover:bg-white text-[#39263E] flex items-center justify-center shadow-lg transition-transform hover:scale-105">
+          ←
+        </button>
+        <button type="button" onclick="window.app.stepLightbox(1)" aria-label="Next Image" class="absolute right-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/90 hover:bg-white text-[#39263E] flex items-center justify-center shadow-lg transition-transform hover:scale-105">
+          →
+        </button>
+      </div>
+      <div class="px-6 py-4 bg-white flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <p id="lightbox-caption" class="text-sm text-[#45534C]"></p>
+        <div class="flex items-center justify-between sm:justify-end gap-3 flex-shrink-0">
+          <span class="text-xs text-[#45534C] italic">Fictional concept imagery</span>
+          <span id="lightbox-counter" class="text-xs font-bold px-3 py-1 rounded-full bg-[#F4F0E9] text-[#39263E]">1 / 14</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Admin Record Detail Modal -->
+  <div id="admin-detail-modal" role="dialog" aria-modal="true" aria-labelledby="admin-modal-title" class="fixed inset-0 z-50 hidden bg-[#39263E]/75 backdrop-blur-sm flex items-center justify-center p-4" onclick="window.app.closeAdminModal()">
+    <div class="bg-[#FAFAF7] rounded-3xl max-w-xl w-full p-6 sm:p-8 shadow-2xl border border-[#39263E]/15" onclick="event.stopPropagation()">
+      <div class="flex items-start justify-between gap-4 border-b border-[#39263E]/10 pb-4">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-[#D9EDB5] text-[#174F43]">Synthetic Demo Record</span>
+          <h3 id="admin-modal-title" class="text-xl font-serif font-bold text-[#39263E] mt-1">Record Details</h3>
+        </div>
+        <button type="button" onclick="window.app.closeAdminModal()" aria-label="Close modal" class="p-2 rounded-full bg-[#F4F0E9] text-[#39263E] hover:bg-[#F8BD96]">✕</button>
+      </div>
+      <div id="admin-modal-body" class="py-5 space-y-3 text-sm text-[#39263E]"></div>
+      <div class="pt-4 border-t border-[#39263E]/10 flex justify-end gap-2">
+        <button type="button" onclick="window.app.closeAdminModal()" class="px-5 py-2.5 rounded-full bg-[#174F43] text-white font-semibold text-sm">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div id="toast-container" aria-live="polite" class="fixed bottom-5 right-5 z-50 hidden max-w-sm bg-[#174F43] text-white px-5 py-3.5 rounded-2xl shadow-editorial border border-[#D9EDB5]/30 flex items-center gap-3">
+    <span class="w-6 h-6 rounded-full bg-[#D9EDB5] text-[#174F43] flex items-center justify-center font-bold text-xs flex-shrink-0">✓</span>
+    <p id="toast-message" class="text-sm font-medium"></p>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-[#FAFAF7] border-t border-[#39263E]/10 pt-14 pb-10 text-[#39263E]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-[#39263E]/10">
+        <div class="lg:col-span-4 space-y-4">
+          <div id="footer-logo-slot"></div>
+          <p class="text-sm text-[#45534C] leading-relaxed max-w-sm">
+            Where little beginnings grow big. A boutique, nature-connected early years concept designed for curious minds and kinder hearts in Dhaka, Bangladesh.
+          </p>
+          <p class="font-handwritten text-2xl text-[#174F43]">
+            A kinder, brighter tomorrow ♡
+          </p>
+        </div>
+
+        <div class="lg:col-span-2 space-y-2.5">
+          <h4 class="font-serif font-bold text-base text-[#39263E]">Programs</h4>
+          <ul class="space-y-2 text-sm text-[#45534C]">
+            <li><button type="button" onclick="window.app.navigate('/programs')" class="hover:text-[#174F43] hover:underline">Program Explorer</button></li>
+            <li><button type="button" onclick="window.app.navigate('/programs/playgroup')" class="hover:text-[#174F43] hover:underline">Playgroup (2–3 yrs)</button></li>
+            <li><button type="button" onclick="window.app.navigate('/programs/nursery')" class="hover:text-[#174F43] hover:underline">Nursery (3–4 yrs)</button></li>
+            <li><button type="button" onclick="window.app.navigate('/programs/kindergarten')" class="hover:text-[#174F43] hover:underline">Kindergarten (4–6 yrs)</button></li>
+            <li><button type="button" onclick="window.app.navigate('/programs/enrichment')" class="hover:text-[#174F43] hover:underline">Enrichment</button></li>
+          </ul>
+        </div>
+
+        <div class="lg:col-span-3 space-y-2.5">
+          <h4 class="font-serif font-bold text-base text-[#39263E]">Our Little World</h4>
+          <ul class="space-y-2 text-sm text-[#45534C]">
+            <li><button type="button" onclick="window.app.navigate('/our-story')" class="hover:text-[#174F43] hover:underline">Our Story &amp; Philosophy</button></li>
+            <li><button type="button" onclick="window.app.navigate('/a-day-at-little-roots')" class="hover:text-[#174F43] hover:underline">A Day at Little Roots</button></li>
+            <li><button type="button" onclick="window.app.navigate('/our-campus')" class="hover:text-[#174F43] hover:underline">Interactive Campus Explorer</button></li>
+            <li><button type="button" onclick="window.app.navigate('/our-educators')" class="hover:text-[#174F43] hover:underline">Our Educators</button></li>
+            <li><button type="button" onclick="window.app.navigate('/gallery')" class="hover:text-[#174F43] hover:underline">School Life Gallery</button></li>
+            <li><button type="button" onclick="window.app.navigate('/parent-corner')" class="hover:text-[#174F43] hover:underline">Parent Corner</button></li>
+          </ul>
+        </div>
+
+        <div class="lg:col-span-3 space-y-2.5">
+          <h4 class="font-serif font-bold text-base text-[#39263E]">Admissions &amp; Demo</h4>
+          <ul class="space-y-2 text-sm text-[#45534C]">
+            <li><button type="button" onclick="window.app.navigate('/admissions')" class="hover:text-[#174F43] hover:underline">Admissions Information</button></li>
+            <li><button type="button" onclick="window.app.navigate('/book-a-tour')" class="hover:text-[#174F43] hover:underline font-semibold text-[#174F43]">Book a School Tour (Demo)</button></li>
+            <li><button type="button" onclick="window.app.navigate('/apply')" class="hover:text-[#174F43] hover:underline font-semibold text-[#39263E]">Admission Inquiry Wizard</button></li>
+            <li><button type="button" onclick="window.app.navigate('/admin')" class="hover:text-[#174F43] hover:underline font-semibold text-[#174F43]">★ Admissions Admin Dashboard</button></li>
+            <li><button type="button" onclick="window.app.navigate('/contact')" class="hover:text-[#174F43] hover:underline">Contact &amp; Dhaka Context</button></li>
+            <li><button type="button" onclick="window.app.navigate('/privacy')" class="hover:text-[#174F43] hover:underline">Privacy &amp; Concept Disclosure</button></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-8 p-5 rounded-2xl bg-[#F4F0E9] border border-[#39263E]/10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
+        <div class="space-y-1 max-w-3xl">
+          <p class="text-xs font-bold uppercase tracking-wider text-[#174F43]">Transparent Concept Disclosure</p>
+          <p class="text-xs text-[#45534C] leading-relaxed">
+            <strong>Little Roots is a fictional kindergarten concept</strong> developed to demonstrate early-childhood brand design and digital admissions experiences. No real admissions or school visits are processed through this website. All records, schedules, and profiles are illustrative demonstration content stored locally in your browser.
+          </p>
+        </div>
+        <div class="flex flex-wrap items-center gap-4 flex-shrink-0">
+          <a href="https://invenio-website.pages.dev/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#39263E] text-white text-xs font-semibold hover:bg-[#174F43] transition-colors">
+            <span>An Invenio Concept Experience</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="mt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-[#45534C] gap-2">
+        <p>© 2026 Little Roots Kindergarten Concept. Crafted for Dhaka, Bangladesh early-years showcase.</p>
+        <div class="flex items-center gap-4">
+          <button type="button" onclick="window.app.navigate('/privacy')" class="hover:text-[#39263E] underline">Privacy &amp; Concept Disclosure</button>
+          <button type="button" onclick="window.app.navigate('/admin')" class="hover:text-[#39263E] underline">Reset Demo State</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Application Bundle Entry Point -->
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
