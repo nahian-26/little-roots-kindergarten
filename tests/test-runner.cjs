@@ -156,12 +156,15 @@ assert(window.app.state.tourDraft.step === 2, 'Tour wizard advanced to step 2');
 window.app.stepTourWizard(1);
 assert(window.app.state.tourDraft.step === 3, 'Tour wizard advanced to step 3');
 window.app.stepTourWizard(1);
-assert(window.app.state.tourDraft.step === 4, 'Tour wizard advanced to step 4 (Review)');
+assert(window.app.state.tourDraft.step === 4, 'Tour wizard advanced to step 4 (Visitor Info)');
+window.app.stepTourWizard(1);
+assert(window.app.state.tourDraft.step === 5, 'Tour wizard advanced to step 5 (Review)');
 
 const tourCountBefore = window.app.state.demoDb.tours.length;
 window.app.submitTourRequest();
 assert(window.app.state.demoDb.tours.length === tourCountBefore + 1, 'Tour submission added record to demoDb');
 assert(window.app.state.demoDb.tours[0].status === 'Tour Requested', 'Tour record status is "Tour Requested"');
+assert(window.app.state.tourDraft.step === 6, 'Tour wizard step reached confirmation (Step 6)');
 
 // Suite 7: Admission Inquiry Wizard Flow
 console.log('\nTEST SUITE 7: Admission Inquiry Wizard Flow');
@@ -169,12 +172,13 @@ window.app.updateInquiryDraft('program', 'Kindergarten');
 window.app.toggleInquiryInterest('Creative Atelier');
 window.app.stepInquiryWizard(1);
 assert(window.app.state.inquiryDraft.step === 2, 'Inquiry wizard step advanced to 2');
-window.app.jumpInquiryStep(6);
-assert(window.app.state.inquiryDraft.step === 6, 'Inquiry wizard jumped to step 6 (Review)');
+window.app.jumpInquiryStep(7);
+assert(window.app.state.inquiryDraft.step === 7, 'Inquiry wizard jumped to step 7 (Review)');
 const inqCountBefore = window.app.state.demoDb.inquiries.length;
 window.app.submitInquiryWizard();
 assert(window.app.state.demoDb.inquiries.length === inqCountBefore + 1, 'Inquiry submission added record to demoDb');
 assert(window.app.state.demoDb.inquiries[0].program === 'Kindergarten', 'Inquiry record program matches draft');
+assert(window.app.state.inquiryDraft.step === 8, 'Inquiry wizard step reached confirmation (Step 8)');
 
 // Suite 8: Demonstration Admin Dashboard Operations
 console.log('\nTEST SUITE 8: Administrative Dashboard Operations');

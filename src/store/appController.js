@@ -394,7 +394,7 @@ window.app = {
   stepTourWizard: function(delta) {
     let next = this.state.tourDraft.step + delta;
     if (next < 1) next = 1;
-    if (next > 4) next = 4;
+    if (next > 5) next = 5;
     this.state.tourDraft.step = next;
     this.renderCurrentRoute();
   },
@@ -412,7 +412,7 @@ window.app = {
       status: 'Tour Requested'
     });
     this.state.tourDraft.lastSubmittedId = id;
-    this.state.tourDraft.step = 4;
+    this.state.tourDraft.step = 6;
     this.saveDemoDb();
     this.renderCurrentRoute();
     this.showToast('Demonstration tour request submitted! (Simulated)');
@@ -512,7 +512,7 @@ window.app = {
       notes: this.state.inquiryDraft.notes || 'Inquiry wizard submission.'
     });
     this.state.inquiryDraft.lastSubmittedId = id;
-    this.state.inquiryDraft.step = 7;
+    this.state.inquiryDraft.step = 8;
     this.saveDemoDb();
     this.saveInquiryDraft();
     this.renderCurrentRoute();
